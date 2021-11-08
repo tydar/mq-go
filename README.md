@@ -19,6 +19,8 @@ Usage of ./mq-go:
     number of send worker threads (default 3)
 ```
 
+## Questions?
+
 *Why HTTP?*
 
 Because I knew a little bit about how `net/http` works and TCP protocols seemed like too much work for a quick toy.
