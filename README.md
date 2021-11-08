@@ -2,6 +2,23 @@
 
 A minimalist toy message queuing server that operates over HTTP. Messages are distributed FIFO to any clients registered to receive them. No channels, topics, etc are supported.
 
+## Usage
+
+1. Run `go build .`
+2. Run `mq-go`. By default, logging goes to `stderr`, the server runs on port 8080, a buffer of 5 messages can wait to be distributed at once, and 3 worker threads are spawned.
+
+Flags are:
+
+```
+Usage of ./mq-go:
+  -jobs int
+    number of buffered send jobs (default 5)
+  -port int
+    listening port (default 8080)
+  -workers int
+    number of send worker threads (default 3)
+```
+
 *Why HTTP?*
 
 Because I knew a little bit about how `net/http` works and TCP protocols seemed like too much work for a quick toy.
