@@ -220,13 +220,13 @@ func (s *Server) DisconnectHandler(w http.ResponseWriter, r *http.Request) {
 	var reqObj DisconnectMessage
 	json.Unmarshal([]byte(bodyString), &reqObj)
 
-    err2 := s.Connections.Disconnect(reqObj.ID)
-    if err2 != nil {
-        log.Printf("Error disconnecting ID %d: %s.\n", reqObj.ID, err2.Error())
-        fmt.Fprintf(w, "{\"status\":\"Error: no such connection.\", \"id\": %d}\n", reqObj.ID)
-        return
-    }
-    fmt.Fprintf(w, "{\"status\":\"Disconnected.\", \"id\": %d}\n", reqObj.ID)
+	err2 := s.Connections.Disconnect(reqObj.ID)
+	if err2 != nil {
+		log.Printf("Error disconnecting ID %d: %s.\n", reqObj.ID, err2.Error())
+		fmt.Fprintf(w, "{\"status\":\"Error: no such connection.\", \"id\": %d}\n", reqObj.ID)
+		return
+	}
+	fmt.Fprintf(w, "{\"status\":\"Disconnected.\", \"id\": %d}\n", reqObj.ID)
 }
 
 func (s *Server) DashboardHandler(w http.ResponseWriter, r *http.Request) {
