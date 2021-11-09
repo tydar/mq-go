@@ -1,6 +1,6 @@
 # MQ Go
 
-A minimalist toy message queuing server that operates over HTTP. Messages are distributed FIFO to any clients registered to receive them. No channels, topics, etc are supported.
+A minimalist toy message queuing server that operates over HTTP. Messages are distributed to any clients registered to receive them. No channels, topics, etc are supported.
 
 ## Usage
 
